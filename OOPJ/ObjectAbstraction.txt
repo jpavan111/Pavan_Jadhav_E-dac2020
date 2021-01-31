@@ -1,0 +1,664 @@
+package oops_with_java;
+
+import java.util.Scanner;
+
+//Que 1
+/*
+import java.util.Scanner;
+
+class Student
+{
+	String name;
+	int rollno;
+	
+	void setdata(String name,int rollno)
+	{
+		this.name=name;
+		this.rollno=rollno;
+	}
+	
+	void showData()
+	{
+		System.out.println("Student name : "+name);
+		System.out.println("Roll no. : "+rollno);
+	}
+}
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		
+		Student[] st=new Student[n];	
+		
+		for(int i=0;i<st.length;i++)
+		{
+			sc.nextLine();
+			String name=sc.nextLine();
+			int rollno=sc.nextInt();
+			st[i]=new Student(); 
+			st[i].setdata(name,rollno);
+		}
+		
+		for(int i=0;i<st.length;i++)
+		{
+			st[i].showData();
+		}
+	}
+
+}
+*/
+
+/*
+
+//Que -2
+class Circle
+{
+	int radius;
+	double area=0;
+	
+	void init(int radius)
+	{
+		this.radius=radius;
+	}
+	void calculateArea()
+	{
+		area=Math.PI*(radius*radius);
+	}
+	void display()
+	{
+		System.out.println("Radius is : "+radius);
+		String str=String.format("Area is : %.3f", area);
+        System.out.println(str);	
+	}
+}
+
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter radius : ");
+		  int radius=sc.nextInt();
+	     Circle c=new Circle();
+	  
+	    c.init(radius);
+	    c.calculateArea();
+	    c.display();
+	}
+
+}
+*/
+
+/*
+//Que-3
+class MathOperation
+{
+	static int add(int num1,int num2)
+	{
+		return num1+num2;
+	}
+	static int substract(int num1,int num2)
+	{
+		return num1-num2;
+	}
+	static int multiply(int num1,int num2)
+	{
+		return num1*num2;
+	}
+	static int power(int num1,int num2)
+	{
+		return (int) Math.pow(num1, num2);
+	}
+}
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter two numbers : ");
+		  int num1=sc.nextInt();
+		  int num2=sc.nextInt();
+		  
+		  int sum,sub,mul,pow;
+		  sum=MathOperation.add(num1,num2);
+		  sub=MathOperation.substract(num1,num2);
+		  mul=MathOperation.multiply(num1,num2);
+		  pow=MathOperation.power(num1,num2);
+	     
+		   System.out.println("add :"+sum);
+		   System.out.println("sub :"+sub);
+		   System.out.println("mul :"+mul);
+		   System.out.println("power :"+pow);
+	
+	}
+
+}
+*/
+
+/*
+//Que-4
+class MathOperation
+{
+	void multiply(int num1,int num2)
+	{
+	  int mul=num1*num2;
+	 System.out.println("intger multiplication : "+mul);
+		
+	}
+	void multiply(float num1,float num2,float num3)
+	{
+		float mul=num1*num2*num3;
+		 System.out.println("float multiplication : "+mul);
+	}
+	void multiply(int[] arr)
+	{
+		int mul=1;
+		for(int i=0;i<arr.length;i++)
+		{
+			mul*=arr[i];
+		}
+		System.out.println("array mul :"+mul);
+	}
+	void multiply(double d1,int d2)
+	{
+		double mul=0;
+		mul=(double)(d1*d2);
+		String s=String.format("double and int mul : %.3f", mul);
+	    System.out.println(s);
+	}
+}
+
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter two numbers : ");
+		MathOperation mp=new MathOperation() ;
+		
+		int num1=sc.nextInt();
+		  int num2=sc.nextInt();
+		  
+		
+		  float float1=sc.nextFloat();
+		  float float2=sc.nextFloat();
+		  float float3=sc.nextFloat();
+	
+		  
+		  int n=sc.nextInt();
+		  int[] arr=new int[n];
+		  
+		  for(int i=0;i<arr.length;i++)
+		  {
+			  arr[i]=sc.nextInt();
+		  }
+		  
+		  
+		  double d1=sc.nextDouble();
+		  int d2=sc.nextInt();
+		  
+		  mp.multiply(num1,num2);
+		  mp.multiply(float1,float2,float3);
+		  mp.multiply(arr);
+		  mp.multiply(d1,d2);
+		  
+	
+	}
+
+}
+*/
+
+/*
+//Que-5
+class Employee5
+{
+    static int empNo;
+	double salary;
+	static double tSalary;
+	
+	Employee5(double salary)
+	{
+		this.empNo++;
+		this.salary=salary;
+	}
+	
+	static void display(double tot)
+	{
+		tSalary=tot;
+		System.out.println("EmpNO : "+empNo+" " + "Total salary : " +tSalary);
+	}
+}
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		Employee5[] emp=new Employee5[5];
+		
+		System.out.println("Enter employee sal");
+		for(int i=0;i<emp.length;i++)
+		{
+			double sal=sc.nextDouble();
+			emp[i]=new Employee5(sal);
+			
+		}
+		
+		double tot=0;
+		
+		for(int i=0;i<emp.length;i++)
+		{
+			System.out.println(emp[i].salary);
+			tot=tot+emp[i].salary;
+		
+		}
+		System.out.println(tot);
+		Employee5.display(tot);	
+		
+	
+		  
+	
+	}
+
+}
+*/
+
+/*
+//Que-6
+class Product
+{
+	int pid;
+	int price;
+	int quantity;
+	
+	Product(int pid,int price,int quantity)
+	{
+		this.pid=pid;
+		this.price=price;
+		this.quantity=quantity;
+	}
+	
+	static int display(Product[] p)
+	{
+		int tot=0;
+		for(int i=0;i<p.length;i++)
+		{
+			tot=tot+(p[i].price*p[i].quantity);
+		}
+		return tot;
+	}
+}
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+       
+		System.out.println("enter no. of  products");
+		int n=sc.nextInt();
+		Product[] p=new Product[n];
+		
+		for(int i=0;i<p.length;i++)
+		{
+			System.out.println("enter products of"+" "+i);
+			int pid=sc.nextInt();
+			int price=sc.nextInt();
+			int quantity=sc.nextInt();
+			p[i]=new Product(pid,price,quantity);
+		}
+		
+		int max=p[0].price;
+		for(int i=0;i<p.length;i++)
+		{
+			if(p[i].price>max)
+			{
+				max=p[i].price;
+			}
+			
+		}
+		for(int i=0;i<p.length;i++)
+		{
+			if(p[i].price==max)
+			{
+				System.out.println(p[i].pid);
+			}
+		}
+		
+		int total=Product.display(p);
+		System.out.println("Total price of product is : "+total);
+	
+		  
+	
+	}
+
+}
+*/
+
+/*
+//Que-7
+class OneBHK
+{
+	
+	int roomArea;
+	int hallArea;
+	int price;
+	
+	OneBHK()
+	{
+	   this.roomArea=0;
+	   this.hallArea=0;
+	   this.price=0;
+	}
+	OneBHK(int ra,int ha,int p)
+	{
+		this.roomArea=ra;
+		this.hallArea=ha;
+		this.price=p;
+	}
+	
+     void show()
+	{
+		System.out.println("room area : "+roomArea);
+		System.out.println("hall area : "+hallArea);
+		System.out.println("price area : "+price);
+	}
+}
+
+class TwoBHK extends OneBHK
+{
+	int room2Area;
+	 TwoBHK()
+	 {
+		 
+	 }
+	 TwoBHK(int r2a,int ra,int ha,int p)
+	 {
+		 
+		 super(ra,ha,p);
+		 
+		 this.room2Area=r2a;
+	 }
+	 void show()
+	 {
+		 System.out.println("Room 2 area : "+room2Area);
+		super.show();
+		 
+	 }
+}
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+       
+	
+    
+       TwoBHK[] tw=new TwoBHK[3];
+       
+       
+       for(int i=0;i<tw.length;i++)
+       {
+    	   System.out.println("enter details : "+i);
+    	   int r2a=sc.nextInt();
+    		int ra=sc.nextInt();
+    		int ha=sc.nextInt();
+    		int p=sc.nextInt();
+         tw[i]= new TwoBHK(r2a,ra,ha,p);
+         tw[i].show();
+       } 
+       int price1=0;
+       for(int i=0;i<tw.length;i++)
+       {
+    	 price1+=tw[i].price ; 
+       }
+       
+       
+       System.out.println("Total amount of flats : "+price1);
+       
+	   
+	}
+
+}
+*/
+/*
+//QUE-8
+class Faculty
+{
+	int facID;
+	int sal;
+
+	void input(int factID)
+	{
+		this.facID=factID;
+	}
+	void printSalary()
+	{
+		System.out.println("Factid : "+facID+" "+"salary : "+sal);
+	}
+}
+class FullTimeFaculty extends Faculty
+{
+	int basicSal;
+	int allo;
+	FullTimeFaculty(int basicSal,int allow)
+	{
+		this.basicSal=basicSal;
+		this.allo=allow;
+	}
+	
+	void input(int factid)
+	{
+		int tosal=basicSal+allo;
+		this.sal=tosal;
+		super.input(factid);
+	}
+}
+class PartTimeFaculty extends Faculty
+{
+	 int workhr;
+	 int rate;
+	 PartTimeFaculty(int workhr,int rate)
+	 {
+		 this.workhr=workhr;
+		 this.rate=rate;
+	 }
+	 void input(int factId)
+	 {
+		 int tosal=workhr*rate;
+			this.sal=tosal;
+		super.input(factId); 
+	 }
+}
+
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+	
+		System.out.println("enter 1st faculty : ");
+		int factid1=sc.nextInt();
+		int basic=sc.nextInt();
+		int allow=sc.nextInt();
+		Faculty f1=new FullTimeFaculty(basic,allow);
+		
+		System.out.println("enter 2nd faculty : ");
+		int factid2=sc.nextInt();
+		int workhr=sc.nextInt();
+		int ratehr=sc.nextInt();
+		Faculty f2=new PartTimeFaculty(workhr,ratehr);
+		
+		f1.input(factid1);
+		f2.input(factid2);
+		
+		f1.printSalary();
+		f2.printSalary();
+		
+    
+     
+       
+	   
+	}
+
+}
+
+*/
+
+//another way
+/*
+//Que-8
+import java.util.*;
+class Faculty
+{
+    Scanner sc=new Scanner(System.in);
+    int facultyId;
+    double salary1;
+    void input()
+    {
+        System.out.println("Enter faculty id");
+        this.facultyId=sc.nextInt();
+    }
+    void printSalary()
+    {
+        System.out.println("salary="+salary1);
+    }
+}
+class FullTimeFaculty extends Faculty
+{
+    double basicSalary;
+    double allowance;
+    void input()
+    {
+        super.input();
+        System.out.println("Enter basic salary");
+        this.basicSalary=sc.nextDouble();
+        System.out.println("Enter allowance");
+        this.allowance=sc.nextDouble();
+        super.salary1=(this.basicSalary+this.allowance);
+    }
+}
+class PartTimeFaculty extends Faculty
+{
+    int workingHours;
+    double ratePerHour;
+    void input()
+    {
+        super.input();
+        System.out.println("Enter working hours");
+        this.workingHours=sc.nextInt();
+        System.out.println("Enter rate per day");
+        this.ratePerHour=sc.nextDouble();
+        super.salary1=(this.workingHours*this.ratePerHour);
+    }
+}
+
+class Demo
+{
+    public static void main(String args[])
+    {
+        FullTimeFaculty full=new FullTimeFaculty();
+        full.input();
+        full.printSalary();
+        PartTimeFaculty pf=new PartTimeFaculty();
+        pf.input();
+        pf.printSalary();
+                
+        
+    }
+}
+*/
+
+
+
+//Que-9
+abstract class Processor
+{
+	Scanner sc=new Scanner(System.in);
+	double data;
+	
+	void show()
+	{
+	 System.out.println(data);	
+	}
+	abstract void process();
+
+}
+
+class Factorial extends Processor
+{
+	void process()
+	{
+		System.out.println("Enter data : ");
+		int n=sc.nextInt();
+		
+		int fact=1;
+		for(int i=1;i<=n;i++)
+		{
+			fact=i*fact;
+		}
+		//System.out.println("fact="+fact);
+		data=fact;
+		
+	}
+}
+
+class Circle extends Processor
+{
+	double area=0;
+	void process()
+	{
+		System.out.println("Enter radius : ");
+		data=sc.nextInt();
+		
+		area=Math.PI*data*data;	
+		//System.out.println("area : "+area);
+		data=area;
+	}
+	
+}
+
+public class Assignment_4_Objects {
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+	
+		Processor cir=new Circle();
+		Processor fact=new Factorial();
+		int n;
+		do
+		{
+			System.out.println("Enter choice 1.area , 2.factorial");
+			n=sc.nextInt();
+			
+			switch(n)
+			{
+			case 1:
+				cir.process();
+				cir.show();
+				break;
+			case 2:
+				fact.process();
+				fact.show();
+				break;
+			}
+		}while(n!=0);
+		
+    System.out.println("Exit");
+     
+       
+	   
+	}
+
+}
